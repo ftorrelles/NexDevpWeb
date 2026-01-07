@@ -1,0 +1,166 @@
+.heroSection {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px;
+
+  /* FONDO */
+  background: linear-gradient(
+      90deg,
+      var(--nex-black) 35%,
+      rgba(25, 26, 27, 0.8) 60%,
+      rgba(25, 26, 27, 0.2) 100%
+    ),
+    url("/hero-img.jpg");
+
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 10;
+}
+
+/* --- TEXTO --- */
+.content {
+  max-width: 650px;
+}
+
+.title {
+  color: var(--nex-white);
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1.5px;
+}
+
+.highlight {
+  color: var(--nex-green);
+}
+
+.description {
+  color: var(--nex-grey);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+/* --- BOTÓN --- */
+.btnPrimary {
+  background-color: var(--nex-green);
+  color: var(--nex-white);
+  border: none;
+  padding: 16px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: #1e9e54;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+/* 1. LAPTOPS MEDIANAS Y PEQUEÑAS (Max 1440px)*/
+@media (max-width: 1440px) {
+  .heroSection {
+    background-position: center;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    max-width: 550px;
+  }
+
+  .btnPrimary {
+    padding: 14px 28px; /* Botón ligeramente más pequeño */
+  }
+}
+
+/* 2. TABLETS (Vertical u Horizontal - Max 1024px) */
+@media (max-width: 1024px) {
+  .heroSection {
+    min-height: auto; /* Quitamos la altura forzada */
+    padding: 140px 0 80px 0;
+
+    /* Cambiamos el degradado para oscurecer más la imagen y que se lea el texto */
+    background: linear-gradient(
+        90deg,
+        var(--nex-black) 45%,
+        rgba(25, 26, 27, 0.7) 100%
+      ),
+      url("/hero-img.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+}
+
+/* 3. MÓVILES (Celulares - Max 768px) */
+@media (max-width: 768px) {
+  .heroSection {
+    /* Degradado vertical total para celular */
+    background: linear-gradient(
+        180deg,
+        var(--nex-black) 20%,
+        rgba(25, 26, 27, 0.8) 60%,
+        rgba(25, 26, 27, 0.4) 100%
+      ),
+      url("/hero-img.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 60px 0;
+    text-align: center;
+    align-items: flex-start; /* Alineamos arriba para que no tape la imagen abajo */
+  }
+
+  .content {
+    margin: 0 auto; /* Centrar el bloque */
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btnPrimary {
+    width: 100%; /* Botón ancho en celular es más fácil de tocar */
+    justify-content: center;
+  }
+}

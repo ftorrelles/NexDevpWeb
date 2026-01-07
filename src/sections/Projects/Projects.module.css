@@ -1,0 +1,197 @@
+.section {
+  background-color: var(--nex-black);
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  margin-bottom: 50px;
+  text-align: left; /* Título a la izquierda para variar estilo */
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--nex-white);
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--nex-green);
+}
+
+.subtitle {
+  color: var(--nex-grey);
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* --- BENTO GRID CONFIG --- */
+.grid {
+  display: grid;
+  /* Creamos 4 columnas base */
+  grid-template-columns: repeat(4, 1fr);
+  /* Altura automática de filas (aprox 250px-300px por fila visual) */
+  grid-auto-rows: 280px;
+  gap: 20px;
+}
+
+/* --- CLASES DE TAMAÑO (LA MAGIA) --- */
+
+/* Normal: 1x1 (Ocupa 1 columna, 1 fila) */
+.normal {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Large: 2x2 (Cuadro Gigante) */
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Wide: 2x1 (Rectángulo horizontal) */
+.wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* Tall: 1x2 (Rectángulo vertical - Opcional si quisieras usarlo) */
+.tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+/* --- ESTILO DE TARJETAS --- */
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--nex-dark-grey);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .img {
+  transform: scale(1.1); /* Zoom suave */
+}
+
+/* Overlay Oscuro */
+.overlay {
+  position: absolute;
+  inset: 0; /* top:0, left:0, right:0, bottom:0 */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 25px;
+  opacity: 1; /* Siempre visible el degradado, texto quizás fijo o hover */
+  transition: all 0.3s;
+}
+
+.info {
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .info {
+  transform: translateY(0);
+}
+
+.category {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--nex-green);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.projectTitle {
+  font-size: 1.4rem;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.iconBtn {
+  background: white;
+  color: black;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  opacity: 0; /* Oculto por defecto */
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets (iPad) */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Pasamos a 2 columnas */
+    grid-auto-rows: 250px;
+  }
+
+  /* En tablet, Large sigue siendo grande, pero Wide ocupa todo el ancho */
+  .large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .wide {
+    grid-column: span 2;
+  }
+  .normal {
+    grid-column: span 1;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: column; /* Grid vertical simple */
+    gap: 20px;
+  }
+
+  .card {
+    height: 300px; /* Altura fija para todos en celular */
+    width: 100%;
+  }
+
+  /* Reactivar botón para táctil */
+  .iconBtn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,170 @@
+/* src/sections/Solution/Solution.module.css */
+
+.section {
+  width: 100%;
+  /* Un fondo ligeramente distinto para separar visualmente del bloque anterior */
+  background: linear-gradient(180deg, var(--nex-black) 0%, #151617 100%);
+  padding: 100px 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- HEADER --- */
+.header {
+  margin-bottom: 70px;
+  max-width: 800px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--nex-green);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--nex-white);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--nex-green);
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--nex-grey);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.description strong {
+  color: var(--nex-white);
+  font-weight: 500;
+}
+
+/* --- GRID BENTO --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 2rem;
+}
+
+/* --- TARJETAS --- */
+.card {
+  background-color: rgba(255, 255, 255, 0.03); /* Casi transparente */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+/* Iconos Normales */
+.iconBox {
+  width: 50px;
+  height: 50px;
+  background-color: #27272a; /* Gris oscuro neutro */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nex-white);
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--nex-white);
+  margin-bottom: 1rem;
+}
+
+.cardText {
+  font-size: 1rem;
+  color: var(--nex-grey);
+  line-height: 1.6;
+}
+
+/* --- TARJETA DESTACADA (IA SDR) --- */
+.cardFeatured {
+  border-color: rgba(34, 181, 97, 0.4); /* Borde verde */
+  background: linear-gradient(
+    145deg,
+    rgba(34, 181, 97, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  position: relative;
+}
+
+.iconBoxFeatured {
+  width: 50px;
+  height: 50px;
+  background-color: var(--nex-green); /* Fondo verde sólido */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nex-white);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(34, 181, 97, 0.3);
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets (Vertical) y Móviles grandes */
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 columna */
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .header {
+    text-align: center;
+    margin: 0 auto 50px auto;
+  }
+
+  .description {
+    margin: 0 auto;
+  }
+
+  .card {
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

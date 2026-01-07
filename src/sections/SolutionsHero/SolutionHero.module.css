@@ -1,0 +1,136 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  overflow: hidden;
+
+  margin-top: -80px;
+
+  padding-top: 250px;
+  padding-bottom: 100px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(25, 26, 27, 0.1) 0%,
+    rgba(25, 26, 27, 0.4) 50%,
+    var(--nex-black) 100%
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 2rem;
+  animation: fadeUp 1s ease-out;
+}
+
+.badge {
+  display: inline-block;
+  color: var(--nex-green);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  background: rgba(34, 181, 97, 0.1);
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(34, 181, 97, 0.2);
+}
+
+.title {
+  font-size: 4.5rem;
+  color: var(--nex-white);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--nex-green);
+  background: linear-gradient(90deg, #fff, var(--nex-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVE --- */
+
+/* 1. Laptops Estándar y Pequeñas (Max 1440px) */
+@media (max-width: 1440px) {
+  .hero {
+    padding-top: 250px;
+    min-height: 60vh;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+/* 2. Tablets (Max 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    background-attachment: scroll; /* Quitamos efecto fijo en táctil */
+    padding-top: 180px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* 3. Móviles (Max 768px) */
+@media (max-width: 768px) {
+  .hero {
+    /* Mucho espacio arriba para librar el menú en celular */
+    padding-top: 240px;
+    padding-bottom: 80px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,194 @@
+.section {
+  width: 100%;
+  background-color: var(--nex-black);
+  padding: 100px 0 0 0;
+  /* --- EFECTO GRID  --- */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  /* tamaño de cada cuadro (50px x 50px) */
+  background-size: 50px 50px;
+  /* Centrar el patrón para que se vea simétrico */
+  background-position: center top;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- CABECERA INTRODUCTORIA --- */
+.introHeader {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--nex-green);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.introTitle {
+  font-size: 3rem;
+  color: var(--nex-white);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--nex-green);
+}
+
+.introDescription {
+  font-size: 1.125rem;
+  color: var(--nex-grey);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   ESTILOS PARALLAX
+   ========================================= */
+.parallaxContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El bloque que contiene la imagen de fondo */
+.parallaxBlock {
+  width: 100%;
+  min-height: 500px; /* Altura mínima para que se vea bien el efecto */
+  /* fixed hace que la imagen no se mueva al hacer scroll */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* La capa oscura superpuesta */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 26, 27, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 2rem;
+}
+
+/* El contenido centrado dentro del bloque */
+.blockContent {
+  max-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconWrapper {
+  color: var(--nex-green);
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 15px rgba(34, 181, 97, 0.3));
+}
+
+.blockTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--nex-white);
+  margin-bottom: 1rem;
+}
+
+.blockDescription {
+  font-size: 1.1rem;
+  color: var(
+    --nex-grey
+  ); /* Gris claro para buen contraste sobre el fondo oscuro */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Badges de Tecnología */
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.techBadge {
+  font-size: 0.8rem;
+  background-color: rgba(34, 181, 97, 0.1);
+  color: var(--nex-white);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 1px solid rgba(34, 181, 97, 0.3);
+}
+
+/* Botón CTA Específico */
+.ctaButton {
+  background-color: var(--nex-green);
+  color: var(--nex-white);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #1e9e54;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -10px rgba(34, 181, 97, 0.5);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .introTitle {
+    font-size: 2.2rem;
+  }
+
+  /* IMPORTANTE: Desactivar el efecto fixed en móviles para mejor rendimiento */
+  .parallaxBlock {
+    background-attachment: scroll;
+    min-height: auto; /* Dejar que el contenido defina la altura */
+  }
+
+  .overlay {
+    position: relative; /* Ya no es absoluto */
+    padding: 60px 2rem; /* Padding generoso arriba y abajo */
+    /* Hacemos el fondo un poco más sólido en móvil para asegurar lectura */
+    background: rgba(25, 26, 27, 0.9);
+  }
+
+  .blockTitle {
+    font-size: 1.75rem;
+  }
+
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,102 @@
+/* src/components/WhatsAppBtn/WhatsAppBtn.module.css */
+
+.floatBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* Verde Oficial WhatsApp */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Siempre encima */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+
+  /* Animación de entrada */
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.floatBtn:hover {
+  background-color: #20b857; /* Un poco más oscuro en hover */
+  transform: scale(1.1) translateY(-5px); /* Crece y sube un poco */
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+/* --- TOOLTIP (Burbuja de texto) --- */
+.tooltip {
+  position: absolute;
+  right: 70px; /* A la izquierda del botón */
+  background-color: white;
+  color: #191a1b;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none; /* Para que no estorbe el click */
+}
+
+/* Flechita del tooltip */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+}
+
+.floatBtn:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- ANIMACIONES --- */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE: En móviles ajustamos un poco para que no tape contenido */
+@media (max-width: 768px) {
+  .floatBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* En móvil solemos ocultar el tooltip para que no estorbe */
+  .tooltip {
+    display: none;
+  }
+}

@@ -1,0 +1,161 @@
+.section {
+  width: 100%;
+  background-color: var(
+    --nex-black
+  ); /* Volvemos al negro puro para contraste con la sección anterior */
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- HEADER --- */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--nex-green);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--nex-white);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--nex-green);
+}
+
+/* --- TIMELINE CONTAINER --- */
+.timeline {
+  display: flex;
+  align-items: flex-start; /* Alineados arriba */
+  justify-content: space-between;
+  position: relative;
+}
+
+/* --- PASO INDIVIDUAL --- */
+.step {
+  flex: 1; /* Ocupan el mismo ancho */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+  z-index: 2; /* Para estar encima de los conectores */
+}
+
+/* Número Gigante de Fondo (Toque Pro) */
+.stepNumber {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--nex-white);
+  opacity: 0.03; /* Muy sutil */
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  font-family: var(--font-main);
+}
+
+/* Círculo del Icono */
+.iconCircle {
+  width: 80px;
+  height: 80px;
+  background-color: var(--nex-dark-grey);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nex-green);
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0 8px var(--nex-black); /* "Borde" falso negro para cortar la línea conectora */
+  transition: all 0.3s ease;
+}
+
+.step:hover .iconCircle {
+  border-color: var(--nex-green);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(34, 181, 97, 0.2), 0 0 0 8px var(--nex-black);
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--nex-white);
+  margin-bottom: 1rem;
+}
+
+.stepText {
+  font-size: 1rem;
+  color: var(--nex-grey);
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.stepText strong {
+  color: var(--nex-white);
+}
+
+/* --- CONECTOR (Línea) --- */
+.connector {
+  flex-grow: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  margin-top: 40px;
+  opacity: 0.5;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets y Móviles */
+@media (max-width: 968px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .connector {
+    display: none; /* Ocultamos la línea horizontal */
+  }
+
+  .step {
+    width: 100%;
+    padding: 0;
+  }
+
+  .stepNumber {
+    font-size: 5rem;
+    top: -20px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}

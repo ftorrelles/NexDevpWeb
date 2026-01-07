@@ -1,0 +1,44 @@
+:root {
+  --nex-black: #191a1b; /* Fondo Principal */
+  --nex-dark-grey: #1b1b1c; /* Fondo Secundario/Tarjetas */
+  --nex-grey: #8a8c8b; /* Texto Secundario */
+  --nex-white: #ffffff; /* Texto Principal */
+  --nex-green: #22b561; /* Tu Verde de Marca */
+
+  --font-main: "Outfit", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--nex-black);
+  color: var(--nex-white);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar personalizado  */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--nex-dark-grey);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nex-green);
+}
