@@ -7,41 +7,64 @@ const projects = [
     id: 1,
     title: "Inmobiliaria Elite",
     category: "Automatización IA",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
+    image: "/project1.webp",
+    // "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
     size: "large", // Ocupa 2x2 (El protagonista)
+    url: "",
   },
   {
     id: 2,
-    title: "FinTech Dashboard",
-    category: "SaaS / Web App",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    title: "Netbar",
+    category: "Website Corporativo",
+    image: "/project-netbar.webp",
+    // "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     size: "normal", // 1x1
+    url: "https://netbar.netlify.app/",
   },
   {
     id: 3,
-    title: "Shopify Moda",
-    category: "E-Commerce",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop",
+    title: "Fundación Lazos de amor",
+    category: "Website Institucional",
+    image: "/project-fundacion.webp",
+    // "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop",
     size: "normal", // 1x1
+    url: "https://fundacionlazosdeamor.com/",
   },
   {
     id: 4,
-    title: "App Médica",
+    title: "App control sedes",
     category: "Software a Medida",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
+    image: "/project-vivir.webp",
+    // "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     size: "wide", // Ocupa 2 columnas a lo ancho
+    url: "https://www.youtube.com/watch?v=KKoggMgaJDw",
   },
   {
     id: 5,
-    title: "Lead Magnet System",
-    category: "Landing Page",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+    title: "Biupol",
+    category: "Website corporativo",
+    image: "/project-biupol.webp",
+    // "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
     size: "normal", // 1x1
+    url: "https://www.biupoll.com.co/",
+  },
+  {
+    id: 6,
+    title: "Julio Cesar",
+    category: "Website terapista",
+    image: "/project-julio.webp",
+    // "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+    size: "wide", // 1x1
+    url: "https://www.biupoll.com.co/",
+  },
+  {
+    id: 7,
+    title: "Ser Sanar Crecer",
+    category: "Website psicóloga",
+    image: "/project-ser.webp",
+    // "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+    size: "normal", // 1x1
+    url: "https://www.biupoll.com.co/",
   },
 ];
 
@@ -58,7 +81,7 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* El Grid Mágico */}
+        {/* El Grid  */}
         <div className={styles.grid}>
           {projects.map((project) => (
             <div
@@ -77,9 +100,17 @@ const Projects = () => {
                   <span className={styles.category}>{project.category}</span>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
                 </div>
-                <button className={styles.iconBtn}>
+                {/* <button className={styles.iconBtn}>
                   <ArrowUpRight size={24} />
-                </button>
+                </button> */}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.iconBtn}
+                >
+                  <ArrowUpRight size={24} />
+                </a>
               </div>
             </div>
           ))}
