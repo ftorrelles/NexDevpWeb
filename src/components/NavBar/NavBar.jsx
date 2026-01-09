@@ -141,6 +141,9 @@ const Navbar = () => {
           <button
             className={styles.hamburger}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={
+              isMobileMenuOpen ? "Cerrar menú" : "Abrir menú de navegación"
+            }
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

@@ -2,12 +2,12 @@ import styles from "./WebDev.module.css";
 import { Monitor, ShoppingBag, Code2, ArrowRight } from "lucide-react";
 
 // --- IMÁGENES ---
-const bgWeb =
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop";
-const bgEcommerce =
-  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1920&auto=format&fit=crop";
-const bgSoftware =
-  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop";
+const bgWeb = "/bgweb.webp";
+// "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop";
+const bgEcommerce = "/bgecommerce.webp";
+// "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1920&auto=format&fit=crop";
+const bgSoftware = "/bgsoftware.webp";
+// "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop";
 
 // 1. NÚMERO DE WHATSAPP
 const phoneNumber = "573012632430";
